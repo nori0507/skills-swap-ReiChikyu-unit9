@@ -8,7 +8,7 @@
     <title>Skill Swap</title>
 
     <!--connecting the html file with style.css file-->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
 
 </head>
 
@@ -61,6 +61,7 @@
             <p id="cost">Total Cost:</p>
         </section>
 
+        <!--user match UI-->
         <section class="user-match">
             <p>User Match Skills</p>
             <!--buttons for skill categories-->
@@ -74,6 +75,31 @@
             <button id="match-btn">Find your match now!</button>
         </section>
 
+        <!--adding skills UI-->
+        <!--Getting inputs fromusers and creating new skills-->
+        <form id="add-skills">
+            <p>Add New Skills</p>
+            <p>Title</p>
+            <input type="text" id="skill-title">
+            <p>Category</p>
+            <select id="skill-category" required>
+                <p>Category</p>
+                <!--giving some choices regarding to the category-->
+                <option value="">Select Category</option>
+                <option value="Programming">Programming</option>
+                <option value="Music">Music</option>
+                <option value="Career">Career</option>
+            </select>
+            <p>Price</p>
+            <input type="number" id="skill-price">
+            <p>Provider</p>
+            <input type="text" id="skill-provider">
+            <p>Description</p>
+            <textarea id="skill-description"></textarea>
+            <!--button for submitting the new skill request-->
+            <button type="submit">Add a New Skill!</button>
+        </form>
+
         <!--Listing Some Skills that are offered, dynamically imported from script.js-->
         <section id="skills-container"></section>
     </main>
@@ -83,7 +109,8 @@
         <!--using placeholder link since this is a fake email address-->
         <p id="contact-info">If you have any troubles, send email to the following address: <a href="#skillswap@rize.edu">skillswap@rize.edu</a></p>
     </footer>
-    <!--connecting html file with js file-->
+    <!--connecting html file with js files-->
+    <script src="api-service.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

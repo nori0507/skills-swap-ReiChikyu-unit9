@@ -17,36 +17,7 @@ document.addEventListener("DOMContentLoaded",() =>{
 })
 
 /*contents of skills that will pop up on the UI*/
-const allSkills = [
-    {
-        title: "Python Tutoring",
-        category: "Programming",
-        price: 20,
-        provider: "Sam",
-        details: "If you have any bugs in your project, you are not sure where to start coding, or if you are not understanding the concept, this is the perfect place for yout to come!"
-    },
-    {
-        title: "Guitar Lessons",
-        category: "Music",
-        price: 15,
-        provider: "Jessica",
-        details: "You want to learn how to play the guitar!? Then you found the perfect place!"
-    },
-    {
-        title: "Resume Review",
-        category: "Career",
-        price: 0,
-        provider: "Sara",
-        details: "If you are struggling with what to put on your resume, this is a greate time to figure it out!"
-    },
-    {
-        title: "Web Development",
-        category: "Programming",
-        price: 25,
-        provider: "Mike",
-        details: "If you want to develop a website, you can get basic knowledges through the session!"
-    }
-];
+let allSkills = [];
 
 //function for the skill filter (copied from skillswap-funtions.js)
 function filterSkillsByCategory(skills, category){
@@ -80,7 +51,7 @@ function displaySkills(skills) {
             <p>Price: $${skill.price}/hr</p>
             <p>Provider: ${skill.provider}</p>
             <p class="skill-detail">Click here for more details!</p>
-            <p class="detail-description">${skill.details}</p>`; // contents of the skill
+            <p class="detail-description">${skill.description}</p>`; // contents of the skill
 
         const detailButton =skillCard.querySelector(".skill-detail");
         const detailDescription =skillCard.querySelector(".detail-description");
@@ -171,4 +142,50 @@ document.querySelectorAll(".filter, .match-category" ).forEach(filterButton => {
         });
         filterButton.classList.add("selected");//highlight the one that is selected
     });
+});
+
+
+//function to load skills from API
+async function loadSkills(){
+    try{
+        allSkills = await window.apiService.fetchSkills();
+        displaySkills(allSkills);
+    } catch (error) {
+        console.error('Failed at loading skills:', error);
+        alert('Failed to load skills.');
+    }
+}
+
+//adding new skills after the submission
+const addSkillForm = document.getElementById('add-skills');
+addSkillForm.addEventListener('submit', async(event) => {
+    event.preventDefault(); // so that the page does not load right after 
+
+    const skillData = { //getting inputs
+        title:document.getElementById('skill-title').value,
+        category:document.getElementById('skill-category').value,
+        price:parseInt(document.getElementById('skill-price').value),
+        provider:document.getElementById('skill-provider').value,
+        description:document.getElementById('skill-description').value
+    };
+
+    try{
+        await window.apiService.createSkill(skillData);
+        alert("skill was added successfully!");
+
+        //clear input form
+        addSkillForm.reset();
+
+        //Reload skills from API
+        await loadSkills();
+    }
+    catch (error) {
+        console.error("Failed at adding a new skill",error);
+        alert("Failed to add skill.");
+    }
+});
+
+//loading skills
+document.addEventListener("DOMContentLoaded", () => {
+    loadSkills();
 });
