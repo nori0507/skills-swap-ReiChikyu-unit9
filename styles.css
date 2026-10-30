@@ -227,6 +227,29 @@ label {
     background-color: whitesmoke;
 }
 
+/*styling add skills feature*/
+#add-skills{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 20px auto;
+    background-color: palevioletred;
+    border: 4px double;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/*stykling the submit button*/
+#add-skills button{
+    margin-top: 10px;
+    background-color: lightblue;
+    border: 4px double;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
+    color: black;
+}
+
 /*adjusting all the styles for smaller screens*/
 @media (max-width: 600px) {
     p{
@@ -331,4 +354,12 @@ label {
         align-items: center;
     }
 
+    #add-skills{
+        width: 200px;
+    }
+
+    #add-skills button{
+        margin-top: 5px;
+        font-size: 14px;
+    }
 }
