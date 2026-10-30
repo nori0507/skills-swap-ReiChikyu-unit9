@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--title for the webpage-->
+    <title>Skill Swap</title>
+
+    <!--connecting the html file with style.css file-->
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+    <header class="my-header">
+        <h1>Welcome to Skill Swap!</h1>
+        <nav>
+            <!--Adding navigation features-->
+            <h2>Navigations</h2>
+            <ul class="nav-list">
+                <!--Using placefolder links bc I do not have html links for these pages yet-->
+                <li><a href="#home" class="nav-box">Home</a></li>
+                <li><a href="#tutor-profile" class="nav-box">Tutor Profiles</a></li>
+                <li><a href="#favorite-tutor" class="nav-box">Favorite Tutor</a></li>
+                <li><a href="#message" class="nav-box">Message</a></li>
+                <li><a href="#setting" class="nav-box">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!--Brief explanation about the website-->
+        <section class="hero">
+            <h2>Learn and Teach Within Our College</h2>
+            <p>This is the place where you can be both a tutor and a student!</p>
+            <p>Expand your learning through peer-to-peer exchange.</p>
+        </section>
+
+        <!--Buttons for skill filter-->
+        <div id="filter-buttons">
+            <p>Category Filter</p>
+            <button class="filter">All</button>
+            <button class="filter">Programming</button>
+            <button class="filter">Music</button>
+            <button class="filter">Career</button>
+        </div>
+
+        <!--calculator UI-->
+        <section class="calculator">
+            <p>Cost Calculator</p>
+            <!--let user input the hourly price of the lesson-->
+            <label for="price">Price ($/hr)</label>
+            <input type="number" id="price">
+            <!--let user input the hours-->
+            <label for="hour">Hours</label>
+            <input type="number" id="hour">
+            <!--button to implement the calculation-->
+            <button id="cal-btn">Caluculate now</button>
+            <!--showing the total cost, coming dynamically imoirted from script.js after each calculation-->
+            <p id="cost">Total Cost:</p>
+        </section>
+
+        <section class="user-match">
+            <p>User Match Skills</p>
+            <!--buttons for skill categories-->
+            <button class="match-category">All</button>
+            <button class="match-category">Programming</button>
+            <button class="match-category">Music</button>
+            <button class="match-category">Career</button>
+            <!--let user input the mx price-->
+            <label for="maxPrice">Price ($/hr)</label>
+            <input type="number" id="maxPrice">
+            <button id="match-btn">Find your match now!</button>
+        </section>
+
+        <!--Listing Some Skills that are offered, dynamically imported from script.js-->
+        <section id="skills-container"></section>
+    </main>
+
+    <footer>
+        <!--Leaving the contact information-->
+        <!--using placeholder link since this is a fake email address-->
+        <p id="contact-info">If you have any troubles, send email to the following address: <a href="#skillswap@rize.edu">skillswap@rize.edu</a></p>
+    </footer>
+    <!--connecting html file with js file-->
+    <script src="script.js"></script>
+</body>
+</html>

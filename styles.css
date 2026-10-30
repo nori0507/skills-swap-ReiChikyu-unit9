@@ -1,0 +1,334 @@
+/*setting font for the whole webpage*/
+* {
+    font-family: Arial;
+    background-color: aquamarine;
+}
+
+/*stying paragrahin general*/
+p{
+    font-size: 24px;
+    margin-top: 10px;
+    text-align: center;
+    background-color: transparent;
+}
+
+/*stylinh h1 in general*/
+h1{
+    margin-top: 0px;
+    text-align: center;
+    font-size: 80px;
+    background-color: lightgoldenrodyellow;
+}
+
+/*stylinh h2 in general*/
+h2{
+    text-align: center;
+    font-size: 40px;
+    background-color: transparent;
+}
+
+/*stylinh h3 in general*/
+h3{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 0px;
+    background-color: transparent;
+}
+
+/*displaying the navigations horizontally*/
+.nav-list{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 90px;
+    font-size: 25px;
+}
+
+/*putting each navigatioin into boxes*/
+.nav-box{
+    display: inline-block;
+    text-decoration: none; 
+    background-color:hotpink;
+    border: 4px double;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-bottom: 6px;
+}
+
+/*change the color of navigation box by hover*/
+.nav-box:hover {
+    background-color: lightskyblue;
+    color: white;
+}
+
+/*putting the hero message into a box*/
+.hero {
+    display: block; 
+    max-width: 750px;               
+    margin: auto;        
+    background-color: white;  
+    border: 4px double;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+/*Adjusting the space above the skill offer head line*/
+#skilloffer-head{
+    margin-top: 30px;
+}
+
+/*Adjusting the space above the skill description*/
+.skill-description{
+    margin-top: 3px;
+    margin-bottom: 6px;
+}
+
+/*Adjusting the space above the skill price*/
+.skill-price{
+    margin-top: 3px;
+    margin-bottom: 6px;
+}
+
+/*Adjusting the space above the skill provider*/
+.skill-provider{
+    margin-top: 3px;
+    margin-bottom: 6px;
+}
+
+/*putting each skill into boxes*/
+.skills{
+    display: grid; 
+    max-width: 500px;               
+    margin: auto;        
+    background-color: lightgoldenrodyellow;  
+    border: 4px double;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/*layout when the mouse havoers over the skill cards*/
+.skills.mouse-hovered{
+    box-shadow: 5px 5px;
+    border: 10px double;
+}
+
+/*styling the skill name*/
+.skill-title{
+    margin-top: 0px;
+}
+
+/*putting the detail into a box*/
+.skill-detail {
+    display: block;
+    border: 2px solid lightslategray;
+    border-radius: 5px;
+    background-color: bisque;
+    max-width: 350px;
+    margin: auto;
+    padding: 5px 10px;
+}
+
+/*change the color of detail box by hover*/
+.skill-detail:hover{
+    background-color: lightslategrey;
+}
+
+/*remove the detail description content from the page as a default*/
+.detail-description {
+    display: none;
+}
+
+/*display the detail description content when it is assigned active*/
+.detail-description.active {
+    display: block;
+    font-size: 20px;
+    border: 1px dashed lightslategray;
+    background-color: lightcyan;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/*styling the footer*/
+#contact-info{
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+/*styling the filter feature section*/
+#filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    background-color: palevioletred;
+    border: 4px double;
+    border-radius: 10px;
+    padding: 20px;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+/*styling the filter button of filter feature and cateory button of matching skill feature*/
+.filter,.match-category{
+    display: inline-block;
+    text-decoration: none; 
+    background-color: lightblue;
+    border: 4px double;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+
+/*styling the calculatoe feature section*/
+.calculator {
+    display: block;
+    background-color: palevioletred;
+    border: 4px double;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: fit-content;
+    text-align: center;
+}
+
+/*styling the user match skill feature section*/
+.user-match{
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    background-color: palevioletred;
+    border: 4px double;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+/*styling the button once they are selected*/
+.selected {
+    background-color: darkcyan;
+    color: white;
+}
+
+/*styking the buttons that implement the calculation and skill matching*/
+#cal-btn, #match-btn{
+    font-size: 20px;
+    color: darkcyan;
+    background-color: whitesmoke;
+}
+
+/*styling labels*/
+label {
+    font-size: 20px;
+    font-weight: bold;
+    color: darkcyan;
+    background-color: whitesmoke;
+}
+
+/*adjusting all the styles for smaller screens*/
+@media (max-width: 600px) {
+    p{
+    font-size: 16px;
+    margin-top: 5px;
+    }
+
+    h1{
+        margin-top: 0px;
+        font-size: 40px;
+    }
+
+    h2{
+        font-size: 28px;
+    }
+
+    h3{
+        margin-top: 10px;
+        font-size: 20px;
+    }
+
+    .nav-list{
+        gap: 10px;
+        font-size: 16px;
+        padding-left: 0;
+    }
+
+    .nav-box{
+        border: 4px double;
+        border-radius: 10px;
+        padding: 5px 10px;
+        margin-bottom: 6px;
+    }
+
+    .hero {
+        max-width: 350px;               
+        border: 4px double;
+        border-radius: 10px;
+        padding: 5px 10px;
+    }
+
+    #skilloffer-head{
+        margin-top: 30px;
+    }
+
+    .skills{
+        max-width: 350px;               
+        border: 4px double;
+        border-radius: 10px;
+        padding: 5px 10px;
+        margin-top: 10px;
+    }
+
+    .skill-detail {
+        max-width: 200px;
+        padding: 2px 5px;
+    }   
+
+    .detail-description.active {
+    font-size: 14px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    }
+
+    #contact-info{
+        font-size: 16px;
+    }
+
+    #filter-buttons{
+        gap: 10px;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .filter,.match-category{
+        max-width: 80px;
+        font-size: 10px;
+        text-align: center;
+        padding: 10px 10px;
+    }
+
+    #cal-btn, #match-btn{
+        font-size: 14px;
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: bold;
+        color: darkcyan;
+        background-color: whitesmoke;
+    }
+
+    .calculator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-match{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
