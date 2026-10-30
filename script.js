@@ -144,7 +144,6 @@ document.querySelectorAll(".filter, .match-category" ).forEach(filterButton => {
     });
 });
 
-
 //function to load skills from API
 async function loadSkills(){
     try{
